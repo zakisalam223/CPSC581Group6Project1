@@ -1,13 +1,28 @@
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 0;
+:root {
+    --background: #ffc8f9;
+    --primary: #e637ce;
+    --secondary: #000;
+    --font-main: Courier, monospace;
+    --font-size-large: 2.5rem;
+    --font-size-normal: 1.2rem;
+    --border-size: 0.2rem;
 }
 
-#rotateButton {
-    position: fixed;
-    top: 50px;
-    left: 50px;
-    z-index: 1;
+.topBox {
+    width: 50vw;
+    height: 30vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+    border: var(--border-size) solid var(--secondary);
+}
+
+.receiptBox {
+    width: 15vw;
+    height: 50vh;
+    margin-top: 7vh;
+    margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: 5vw;
+
+    border: var(--border-size) solid var(--secondary);
 }
