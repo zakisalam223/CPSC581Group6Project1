@@ -14,13 +14,35 @@
     margin: 0 auto;
     margin-top: 5vh;
     border: var(--border-size) solid var(--secondary);
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.imageButton {
+
+    padding: 0;
+    margin: 0;
+    background: transparent;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+}
+
+.imageButton img {
+    width: 7vw;
+    height: auto;
+    object-fit: contain;
 }
 
 .receiptBox {
     width: 15vw;
     height: 50vh;
     margin-top: 7vh;
-    margin-bottom: 1rem;
+    margin-bottom: 3vh;
     margin-left: auto;
     margin-right: 5vw;
 
