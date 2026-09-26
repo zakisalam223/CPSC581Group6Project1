@@ -23,7 +23,7 @@ const juicesContainer = document.getElementById('juices-container');
 let selectedButtonKey = "";
 let juiceCount = 0;
 
-// Loop through buttons to add click event listener 
+// Main buttons - to select juice
 allButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Change selected button to current
@@ -37,7 +37,7 @@ allButtons.forEach(button => {
     });
 });
 
-// Lever functionality
+// Lever - to add juice
 leverButton.addEventListener("click", () => {
     if (juiceCount < 4) {
         const addedJuice = juices[selectedButtonKey] || "Juice Error";
