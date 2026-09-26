@@ -20,7 +20,7 @@ const leverButton = document.getElementById('slush-lever');
 const POUR_DURATION_MS = 3000; // Duration of pour animation in milliseconds
 
 const desciptionContainer = document.getElementById('description-container');
-const juicesContainer = document.getElementById('juices-container');
+const slushesContainer = document.getElementById('slushes-container');
 
 let selectedButtonKey = "";
 let slushCount = 0;
@@ -43,8 +43,8 @@ allButtons.forEach(button => {
 // Lever - to add juice
 leverButton.addEventListener("click", () => {
     if (slushCount < 4 && !isPouring) {
-        const addedJuice = juices[selectedButtonKey] || "Juice Error";
-        juicesContainer.textContent += addedJuice;
+        const addedSlush = juices[selectedButtonKey] || "Slush Error";
+        slushesContainer.textContent += addedSlush;
         slushCount++;
 
         // Switch to pour state
