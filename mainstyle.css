@@ -1,7 +1,7 @@
 :root {
-    --background: #ffc8f9;
-    --primary: #e637ce;
-    --secondary: #000;
+    --primary-color: #fff;
+    --selected-button-color: #dbd9d9;
+    --outline-color: #000;
     --font-main: Courier, monospace;
     --font-size-large: 2.5rem;
     --font-size-normal: 1.2rem;
@@ -10,10 +10,10 @@
 
 .topBox {
     width: 64vw;
-    height: 16vw;
+    height: 14vw;
     margin: 0 auto;
     margin-top: 3vh;
-    border: var(--border-size) solid var(--secondary);
+    border: var(--border-size) solid var(--outline-color);
 
     display: flex;
     justify-content: space-between;
@@ -21,14 +21,14 @@
 }
 
 .topBox>:not(:last-child) {
-    border-right: var(--border-size) solid var(--secondary);
+    border-right: var(--border-size) solid var(--outline-color);
 }
 
 /* Normal Button State */
 .imageButton {
     padding: 0;
     margin: 0;
-    background: transparent;
+    background: var(--primary-color);
     border: none;
 
     width: 25%;
@@ -48,7 +48,7 @@
 
 /* Selected Button State */
 .imageButton.selected {
-    background-color: purple;
+    background-color: var(--selected-button-color);
 }
 
 .bottomBox {
@@ -59,7 +59,7 @@
 }
 
 .descriptionLeverBox {
-    width: 24vw; /* Adjust the width as needed */
+    width: 24vw;
     margin: 1vh 0 1vh 3vw;
     display: flex;
     flex-direction: column;
@@ -150,6 +150,14 @@
     transform: rotate(180deg);
 }
 
+.cupTrashBox {
+    position: relative;
+    width: 18vw;
+    margin-top: 15vh;
+    margin-bottom: 1vh;
+    margin-right: 6vw;
+}
+
 .cupBox {
     width: 18vw;
     margin-bottom: 1vh;
@@ -171,4 +179,29 @@
         height: auto;
         object-fit: contain;
     }
+}
+
+#trash-button {
+
+    position: relative;
+    bottom: 10vh;
+    right: -20vw;
+
+    width: 5vw;
+    height: auto;
+
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+#trash-button:hover img {
+    content: url("/assets/trashBinOpened.png");
 }

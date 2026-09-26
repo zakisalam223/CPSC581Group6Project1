@@ -77,6 +77,7 @@ const juices = {
 
 const allButtons = document.querySelectorAll('.imageButton');
 const leverButton = document.getElementById('slush-lever');
+const trashButton = document.getElementById('trash-button');
 
 const POUR_DURATION_MS = 3000; // Duration of pour animation in milliseconds
 
@@ -119,4 +120,12 @@ leverButton.addEventListener("click", () => {
         }, POUR_DURATION_MS); // Lever waits 3 seconds before returning to normal state
     }
 });
+
+// trash button to reset the juices (AKA emptying the cup)
+trashButton.addEventListener("click", trashPressed)
+
+function trashPressed(){
+    slushCount = 0;
+    slushesContainer.textContent = "";
+}
 
