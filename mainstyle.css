@@ -68,7 +68,30 @@
         width: 100%;
         height: auto;
         object-fit: contain;
+        background: transparent;
     }
+}
+
+/* Lever button and animation */
+#juice-lever {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#juice-lever img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+#juice-lever.pouring img {
+    transform: rotate(180deg);
 }
 
 .cupBox {
