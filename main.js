@@ -1,6 +1,7 @@
 import './mainstyle.css';
 
 // Array of description objects 
+// TODO: Fill Individual Descriptions here
 const descriptions = {
     "btn1": [
         {
@@ -53,6 +54,20 @@ const descriptions = {
     ],
 }
 
+// HTML Code for each flavour
+const htmlDescription = (point) => `
+    <div class="descriptionBulletPoint">
+        <div class="descriptionMain">
+            <span class="descriptionEmoji">${point.emoji}</span>
+            <span>${point.fruitAttribute}</span>
+        </div>
+
+        <div class="descriptionPersonality">
+            → ${point.personality}
+        </div>
+    </div>
+`
+
 const juices = {
     "btn1": "Juice 1",
     "btn2": "Juice 2",
@@ -80,18 +95,7 @@ allButtons.forEach(button => {
         selectedButtonKey = button.getAttribute('data-key');
         const currentDescription = descriptions[selectedButtonKey] || "Description not found.";
         // For each description object, create piece of html
-        desciptionContainer.innerHTML = currentDescription.map(point => `
-    <div class="descriptionBulletPoint">
-        <div class="descriptionMain">
-            <span class="descriptionEmoji">${point.emoji}</span>
-            <span>${point.fruitAttribute}</span>
-        </div>
-
-        <div class="descriptionPersonality">
-            → ${point.personality}
-        </div>
-    </div>
-`).join('');
+        desciptionContainer.innerHTML = currentDescription.map(htmlDescription).join('');
     });
 });
 
