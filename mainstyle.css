@@ -150,20 +150,15 @@
     transform: rotate(180deg);
 }
 
-.cupTrashBox {
-    position: relative;
-    width: 18vw;
-    margin-top: 15vh;
-    margin-bottom: 1vh;
-    margin-right: 6vw;
-}
 
 .cupBox {
     width: 18vw;
     margin-bottom: 1vh;
+    margin-right: 6vw;
     display: flex;
     flex-direction: column;
     justify-content: end;
+    transform: translateY(-15vh);
 
     img {
         width: 100%;
@@ -183,9 +178,9 @@
 
 #trash-button {
 
-    position: relative;
-    bottom: 10vh;
-    right: -20vw;
+    position: absolute;
+    top: 5vh;
+    right: 5vw;
 
     width: 5vw;
     height: auto;
