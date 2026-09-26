@@ -9,42 +9,87 @@
 }
 
 .topBox {
-    width: 50vw;
-    height: 30vh;
+    width: 64vw;
+    height: 16vw;
     margin: 0 auto;
-    margin-top: 5vh;
+    margin-top: 3vh;
     border: var(--border-size) solid var(--secondary);
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
-.imageButton {
+.topBox>:not(:last-child) {
+    border-right: var(--border-size) solid var(--secondary);
+}
 
+/* Normal Button State */
+.imageButton {
     padding: 0;
     margin: 0;
     background: transparent;
-
-    border-radius: 50%;
     border: none;
 
+    width: 25%;
+    height: 100%;
+
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+        width: 7vw;
+        height: auto;
+        object-fit: contain;
+    }
 }
 
-.imageButton img {
-    width: 7vw;
-    height: auto;
-    object-fit: contain;
+/* Selected Button State */
+.imageButton.selected {
+    background-color: purple;
+}
+
+.bottomBox {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.descriptionLeverBox {
+    width: 18vw;
+    margin: 1vh 0 1vh 3vw;
+    display: flex;
+    flex-direction: column;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+.cupBox {
+    width: 18vw;
+    margin-bottom: 1vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    img {
+        width: 100%;
+    }
 }
 
 .receiptBox {
-    width: 15vw;
-    height: 50vh;
-    margin-top: 7vh;
-    margin-bottom: 3vh;
-    margin-left: auto;
-    margin-right: 5vw;
+    width: 18vw;
+    margin: 1vh 3vw 1vh 0;
 
-    border: var(--border-size) solid var(--secondary);
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
 }
