@@ -79,7 +79,7 @@ allButtons.forEach(button => {
         // Show current juice description
         selectedButtonKey = button.getAttribute('data-key');
         const currentDescription = descriptions[selectedButtonKey] || "Description not found.";
-        // Every description object, creates appropraite piece of html
+        // For each description object, create piece of html
         desciptionContainer.innerHTML = currentDescription.map(point => `
     <div class="descriptionBulletPoint">
         <div class="descriptionMain">
