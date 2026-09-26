@@ -1,11 +1,72 @@
 import './mainstyle.css';
 
+// Array of description objects 
+// TODO: Fill Individual Descriptions here
 const descriptions = {
-    "btn1": "Description 1",
-    "btn2": "Description 2",
-    "btn3": "Description 3",
-    "btn4": "Description 4"
+    "btn1": [
+        {
+            emoji: "★",
+            fruitAttribute: "description",
+            personality: "1"
+        },
+        {
+            emoji: "𐀪",
+            fruitAttribute: "another point",
+            personality: "personality here"
+        }
+    ],
+    "btn2": [
+        {
+            emoji: " ★",
+            fruitAttribute: "description",
+            personality: "2"
+        },
+    ],
+    // Watermelon
+    "btn3": [
+        {
+            emoji: "˶ᵔ ᵕ ᵔ˶",
+            fruitAttribute: "very refreshing and sweet",
+            personality: "positive and friendly"
+        },
+        {
+            emoji: "„• ֊ •„",
+            fruitAttribute: "not overpowering",
+            personality: "low assertiveness; high cooperativeness"
+        },
+        {
+            emoji: "𖦹",
+            fruitAttribute: "watermelon exterior is quite squiggly",
+            personality: "a little unorganized"
+        },
+        {
+            emoji: "ꕀ",
+            fruitAttribute: "high percentage of water",
+            personality: "go with the flow"
+        }
+    ],
+    "btn4": [
+        {
+            emoji: " ★",
+            fruitAttribute: "description",
+            personality: "4"
+        },
+    ],
 }
+
+// HTML Code for each flavour
+const htmlDescription = (point) => `
+    <div class="descriptionBulletPoint">
+        <div class="descriptionMain">
+            <span class="descriptionEmoji">${point.emoji}</span>
+            <span>${point.fruitAttribute}</span>
+        </div>
+
+        <div class="descriptionPersonality">
+            → ${point.personality}
+        </div>
+    </div>
+`
 
 const juices = {
     "btn1": "Juice 1",
@@ -36,7 +97,8 @@ allButtons.forEach(button => {
         // Show current juice description
         selectedButtonKey = button.getAttribute('data-key');
         const currentDescription = descriptions[selectedButtonKey] || "Description not found.";
-        desciptionContainer.textContent = currentDescription;
+        // For each description object, create piece of html
+        desciptionContainer.innerHTML = currentDescription.map(htmlDescription).join('');
     });
 });
 
