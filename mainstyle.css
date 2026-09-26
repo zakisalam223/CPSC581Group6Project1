@@ -73,7 +73,7 @@
 }
 
 /* Lever button and animation */
-#juice-lever {
+#slush-lever {
     padding: 0;
     margin: 0;
     background: transparent;
@@ -82,7 +82,7 @@
     width: 100%;
 }
 
-#juice-lever img {
+#slush-lever img {
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -90,7 +90,7 @@
     transform-origin: center;
 }
 
-#juice-lever.pouring img {
+#slush-lever.pouring img {
     transform: rotate(180deg);
 }
 
