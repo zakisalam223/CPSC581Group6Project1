@@ -76,13 +76,16 @@ const juices = {
 }
 
 const allButtons = document.querySelectorAll('.imageButton');
-const leverButton = document.getElementById('juice-lever');
+const leverButton = document.getElementById('slush-lever');
+
+const POUR_DURATION_MS = 3000; // Duration of pour animation in milliseconds
 
 const desciptionContainer = document.getElementById('description-container');
-const juicesContainer = document.getElementById('juices-container');
+const slushesContainer = document.getElementById('slushes-container');
 
 let selectedButtonKey = "";
-let juiceCount = 0;
+let slushCount = 0;
+let isPouring = false;
 
 // Main buttons - to select juice
 allButtons.forEach(button => {
@@ -101,10 +104,19 @@ allButtons.forEach(button => {
 
 // Lever - to add juice
 leverButton.addEventListener("click", () => {
-    if (juiceCount < 4) {
-        const addedJuice = juices[selectedButtonKey] || "Juice Error";
-        juicesContainer.textContent += addedJuice;
-        juiceCount++;
+    if (slushCount < 4 && !isPouring) {
+        const addedSlush = juices[selectedButtonKey] || "Slush Error";
+        slushesContainer.textContent += addedSlush;
+        slushCount++;
+
+        // Switch to pour state
+        isPouring = true;
+        leverButton.classList.add('pouring');
+
+        setTimeout(() => {
+            leverButton.classList.remove('pouring');
+            isPouring = false;
+        }, POUR_DURATION_MS); // Lever waits 3 seconds before returning to normal state
     }
 });
 

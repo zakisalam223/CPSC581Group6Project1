@@ -59,7 +59,7 @@
 }
 
 .descriptionLeverBox {
-    width: 24vw;
+    width: 24vw; /* Adjust the width as needed */
     margin: 1vh 0 1vh 3vw;
     display: flex;
     flex-direction: column;
@@ -68,6 +68,7 @@
         width: 100%;
         height: auto;
         object-fit: contain;
+        background: transparent;
     }
 }
 
@@ -125,6 +126,28 @@
 .descriptionPersonality {
     margin-left: 2rem;
     font-weight: bold;
+}
+
+/* Lever button and animation */
+#slush-lever {
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+#slush-lever img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center;
+}
+
+#slush-lever.pouring img {
+    transform: rotate(180deg);
 }
 
 .cupBox {
