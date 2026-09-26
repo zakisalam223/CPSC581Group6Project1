@@ -59,7 +59,7 @@
 }
 
 .descriptionLeverBox {
-    width: 18vw;
+    width: 18vw; /* Adjust the width as needed */
     margin: 1vh 0 1vh 3vw;
     display: flex;
     flex-direction: column;

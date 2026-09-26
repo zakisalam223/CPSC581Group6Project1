@@ -17,7 +17,7 @@ const juices = {
 const allButtons = document.querySelectorAll('.imageButton');
 const leverButton = document.getElementById('juice-lever');
 
-const POUR_DURATION_MS = 3000; // duration of pour animation in milliseconds
+const POUR_DURATION_MS = 3000; // Duration of pour animation in milliseconds
 
 const desciptionContainer = document.getElementById('description-container');
 const juicesContainer = document.getElementById('juices-container');
@@ -54,7 +54,7 @@ leverButton.addEventListener("click", () => {
         setTimeout(() => {
             leverButton.classList.remove('pouring');
             isPouring = false;
-        }, POUR_DURATION_MS);
+        }, POUR_DURATION_MS); // Lever waits 3 seconds before returning to normal state
     }
 });
 
