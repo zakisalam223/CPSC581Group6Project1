@@ -1,5 +1,6 @@
 import './mainstyle.css';
 
+// Array of description objects 
 const descriptions = {
     "btn1": [
         {
@@ -11,7 +12,7 @@ const descriptions = {
             emoji: "𐀪",
             fruitAttribute: "another point",
             personality: "personality here"
-        },
+        }
     ],
     "btn2": [
         {
@@ -20,6 +21,7 @@ const descriptions = {
             personality: "2"
         },
     ],
+    // Watermelon
     "btn3": [
         {
             emoji: "˶ᵔ ᵕ ᵔ˶",
@@ -77,6 +79,7 @@ allButtons.forEach(button => {
         // Show current juice description
         selectedButtonKey = button.getAttribute('data-key');
         const currentDescription = descriptions[selectedButtonKey] || "Description not found.";
+        // Every description object, creates appropraite piece of html
         desciptionContainer.innerHTML = currentDescription.map(point => `
     <div class="descriptionBulletPoint">
         <div class="descriptionMain">
