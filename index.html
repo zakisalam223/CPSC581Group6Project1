@@ -20,26 +20,45 @@
     <script type="module" src="/main.js"></script>
 </body>
 
+<!-- TOP BOX -->
 <div class="topBox">
-    <button class="imageButton">
+    <!-- Buttons -->
+    <button type="button" class="imageButton" data-key="btn1">
         <img src="/assets/testButton.png">
     </button>
 
-    <button class="imageButton">
+    <button type="button" class="imageButton" data-key="btn2">
         <img src="/assets/testButton.png">
     </button>
 
-    <button class="imageButton">
+    <button type="button" class="imageButton" data-key="btn3">
         <img src="/assets/testButton.png">
     </button>
 
-    <button class="imageButton">
+    <button type="button" class="imageButton" data-key="btn4">
         <img src="/assets/testButton.png">
     </button>
 </div>
 
-<div class="receiptBox">
+<!-- BOTTOM BOX -->
+<div class="bottomBox">
+    <!-- Description and Lever -->
+    <div class="descriptionLeverBox">
+        <img src="" alt="description image">
+        <div id="description-container">Press a button above to see a description.</div>
+        <button id="juice-lever">lever</button>
+    </div>
 
+    <!-- Juice Cup -->
+    <div class="cupBox">
+        <div id="juices-container"></div>
+        <img src="/assets/cup.png" alt="cup">
+    </div>
+
+    <!-- Receipt -->
+    <div class="receiptBox">
+        <img src="/assets/receipt.png" alt="receipt">
+    </div>
 </div>
 
 </html>
