@@ -111,28 +111,28 @@ const descriptions = {
 // Array of slush layers
 const slushLayers = [
     {
-        "btn1": "/assets/peachlayer-1.png",
-        "btn2": "/assets/dragonfruit-layer1.png",
-        "btn3": "/assets/wm-layer1.png",
-        "btn4": "/assets/figlayer-1.png"
+        "btn1": "./assets/peachlayer-1.png",
+        "btn2": "./assets/dragonfruit-layer1.png",
+        "btn3": "./assets/wm-layer1.png",
+        "btn4": "./assets/figlayer-1.png"
     },
     {
-        "btn1": "/assets/peachlayer-2.png",
-        "btn2": "/assets/dragonfruit-layer2.png",
-        "btn3": "/assets/wm-layer2.png",
-        "btn4": "/assets/figlayer-2.png"
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
     },
     {
-        "btn1": "/assets/peachlayer-2.png",
-        "btn2": "/assets/dragonfruit-layer2.png",
-        "btn3": "/assets/wm-layer2.png",
-        "btn4": "/assets/figlayer-2.png"
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
     },
     {
-        "btn1": "/assets/peachlayer-2.png",
-        "btn2": "/assets/dragonfruit-layer2.png",
-        "btn3": "/assets/wm-layer2.png",
-        "btn4": "/assets/figlayer-2.png"
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
     }
 ];
 
@@ -145,7 +145,6 @@ function addSlushLayer() {
     img.src = slushImage;
     img.classList.add("slush-layer");
     img.classList.add(`layer-${slushCount + 1}`);
-
 
     slushesContainer.appendChild(img);
 }

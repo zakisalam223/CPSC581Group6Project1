@@ -230,7 +230,7 @@
     z-index: 2;
 }
 
-
+/* Slushy */
 #slushes-container {
     position: absolute;
     width: 100%;
@@ -240,7 +240,6 @@
     z-index: 1;
 }
 
-
 .slush-layer {
     position: absolute;
     width: 100%;
@@ -248,8 +247,7 @@
     object-fit: contain;
 }
 
-
-/* Bottom layer */
+/* Bottom layer of slushy positioning */
 .slush-layer.layer-1 {
     top: 16%;
 }
@@ -268,6 +266,7 @@
 .slush-layer.layer-4 {
     top: -30%;
 }
+
 
 /* Receipt Elements */
 .receiptBox {
