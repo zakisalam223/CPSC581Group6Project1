@@ -75,11 +75,11 @@ const juices = {
     "btn4": "Juice 4"
 }
 
-const allButtons = document.querySelectorAll('.imageButton');
+const allButtons = document.querySelectorAll('.imageButton, .melonButton');
 const leverButton = document.getElementById('slush-lever');
 const trashButton = document.getElementById('trash-button');
 
-const POUR_DURATION_MS = 3000; // Duration of pour animation in milliseconds
+const POUR_DURATION_MS = 1000; // Duration of pour animation in milliseconds
 
 const desciptionContainer = document.getElementById('description-container');
 const slushesContainer = document.getElementById('slushes-container');
