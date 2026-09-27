@@ -51,6 +51,21 @@
     background-color: var(--selected-button-color);
 }
 
+/* Peach button */
+.peachButton {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    width: 25%;
+    height: 100%;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Melon Button */
 .melonButton {
     padding: 0;
@@ -66,10 +81,25 @@
     justify-content: center;
 }
 
+.peachButton img {
+    width: 17vw;
+    height: 14vw;
+}
+
 .melonButton img {
     width: 17vw;
     height: 14vw;
 }
+
+.peachButton:hover img {
+    content: url("/assets/peachbutton2.png");
+}
+
+/* Selected Button State */
+.peachButton.selected img {
+    content: url("/assets/peachbutton2.png");
+}
+
 
 .melonButton:hover img {
     content: url("/assets/MelonBlast2.png");
@@ -125,10 +155,10 @@
     overflow-y: auto;
 }
 
-.descriptionInfoBox h2{
+.descriptionInfoBox h2 {
     text-align: center;
     margin-top: -1%;
-    font-family: cursive; 
+    font-family: cursive;
     letter-spacing: 0.08em;
 
 }
@@ -222,7 +252,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    
+
     img {
         width: 100%;
         height: auto;

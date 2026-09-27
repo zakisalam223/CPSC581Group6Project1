@@ -3,17 +3,29 @@ import './mainstyle.css';
 // Array of description objects 
 // TODO: Fill Individual Descriptions here
 const descriptions = {
+    // Peach
     "btn1": [
         {
             emoji: "★",
-            fruitAttribute: "description",
-            personality: "1"
+            fruitAttribute: "very sweet and juicy",
+            personality: "positive and cheerful"
         },
         {
-            emoji: "𐀪",
-            fruitAttribute: "another point",
-            personality: "personality here"
+            emoji: "ᶻ 𝗓 𐰁 .ᐟ",
+            fruitAttribute: "mellow flavour",
+            personality: "low activity level; high cooperation"
+        },
+        {
+            emoji: " ˙𐃷˙ ",
+            fruitAttribute: "peach is pixelated",
+            personality: "very playful and fun"
+        },
+        {
+            emoji: " 𓆝 𓆟 𓆞 ",
+            fruitAttribute: "eyes closed",
+            personality: "high trust"
         }
+
     ],
     "btn2": [
         {
@@ -75,7 +87,10 @@ const juices = {
     "btn4": "Juice 4"
 }
 
-const allButtons = document.querySelectorAll('.imageButton, .melonButton');
+const allButtons = document.querySelectorAll(
+    '.imageButton, .peachButton, .melonButton'
+);
+
 const leverButton = document.getElementById('slush-lever');
 const trashButton = document.getElementById('trash-button');
 
