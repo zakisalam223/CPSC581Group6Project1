@@ -1,7 +1,7 @@
 import './mainstyle.css';
 
 // Array of description objects 
-// TODO: Fill Individual Descriptions here
+// TODO: Fill Individual Descriptions here - 2 positive, 2 negative
 const descriptions = {
     // Peach
     "btn1": [
@@ -27,12 +27,28 @@ const descriptions = {
         }
 
     ],
+    // Dragon Fruit
     "btn2": [
         {
-            emoji: " ★",
-            fruitAttribute: "description",
-            personality: "2"
+            emoji: "≽^•⩊•^≼",
+            fruitAttribute: "open faced fruit",
+            personality: "open and trusting to new experiences"
         },
+        {
+            emoji: "(•؎ •)",
+            fruitAttribute: "light and refreshing",
+            personality: "kind but not too sweet"
+        },
+        {
+            emoji: "𖧧",
+            fruitAttribute: "many seeds throughout",
+            personality: "highly introspective; prone to overthinking"
+        },
+        {
+            emoji: "✧˖°",
+            fruitAttribute: "dragon fruit has spikey skin",
+            personality: "often disconnected from others"
+        }
     ],
     // Watermelon
     "btn3": [
