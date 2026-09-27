@@ -51,6 +51,36 @@
     background-color: var(--selected-button-color);
 }
 
+/* Peach button */
+.peachButton {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    width: 25%;
+    height: 100%;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.peachButton img {
+    width: 17vw;
+    height: 14vw;
+}
+
+.peachButton:hover img {
+    content: url("/assets/peachbutton2.png");
+}
+
+/* Selected Button State */
+.peachButton.selected img {
+    content: url("/assets/peachbutton2.png");
+}
+
+
 .bottomBox {
     width: 100%;
     display: flex;
@@ -200,3 +230,5 @@
 #trash-button:hover img {
     content: url("/assets/trashBinOpened.png");
 }
+
+
