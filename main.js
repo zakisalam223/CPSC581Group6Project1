@@ -57,11 +57,30 @@ const descriptions = {
             personality: "go with the flow"
         }
     ],
+
+    // fig
     "btn4": [
         {
-            emoji: " ★",
-            fruitAttribute: "description",
-            personality: "4"
+            emoji: "^_^",
+            fruitAttribute: "Sweet and rich flavour with a relaxed expression",
+            personality: "Cooperative and friendly"
+        },
+        {
+            emoji: "★_★",
+            fruitAttribute: "Thick slush consistency and thick outlines",
+            personality: "Introverted and assertive"
+        },
+
+        {
+            emoji: ". ~ .",
+            fruitAttribute: "Purple motif",
+            personality: "Higher emotionality, lower agreeableness"
+        },
+
+        {
+            emoji: "- ᵕ -",
+            fruitAttribute: "Hand drawn and animated",
+            personality: "Interest in art"
         },
     ],
 }
