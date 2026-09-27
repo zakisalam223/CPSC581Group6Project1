@@ -66,7 +66,27 @@
     justify-content: center;
 }
 
+/* Melon Button */
+.melonButton {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    width: 25%;
+    height: 100%;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .peachButton img {
+    width: 17vw;
+    height: 14vw;
+}
+
+.melonButton img {
     width: 17vw;
     height: 14vw;
 }
@@ -81,6 +101,16 @@
 }
 
 
+.melonButton:hover img {
+    content: url("/assets/MelonBlast2.png");
+}
+
+/* Selected Button State */
+.melonButton.selected img {
+    content: url("/assets/MelonBlast2.png");
+}
+
+/* Lower half of screen */
 .bottomBox {
     width: 100%;
     display: flex;
@@ -102,6 +132,7 @@
     }
 }
 
+/* Description Box Elements */
 .descriptionImage {
     position: relative;
     width: 100%;
@@ -124,10 +155,10 @@
     overflow-y: auto;
 }
 
-.descriptionInfoBox h2{
+.descriptionInfoBox h2 {
     text-align: center;
     margin-top: -1%;
-    font-family: cursive; 
+    font-family: cursive;
     letter-spacing: 0.08em;
 
 }
@@ -180,7 +211,7 @@
     transform: rotate(180deg);
 }
 
-
+/* Cup  */
 .cupBox {
     width: 18vw;
     margin-bottom: 1vh;
@@ -195,6 +226,7 @@
     }
 }
 
+/* Receipt Elements */
 .receiptBox {
     width: 18vw;
     margin: 1vh 3vw 1vh 0;
@@ -206,6 +238,7 @@
     }
 }
 
+/* Trash Button */
 #trash-button {
 
     position: absolute;
@@ -219,7 +252,7 @@
     background: transparent;
     border: none;
     cursor: pointer;
-    
+
     img {
         width: 100%;
         height: auto;
@@ -230,5 +263,3 @@
 #trash-button:hover img {
     content: url("/assets/trashBinOpened.png");
 }
-
-

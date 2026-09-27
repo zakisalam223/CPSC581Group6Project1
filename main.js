@@ -87,7 +87,10 @@ const juices = {
     "btn4": "Juice 4"
 }
 
-const allButtons = document.querySelectorAll('.imageButton, .peachButton');
+const allButtons = document.querySelectorAll(
+    '.imageButton, .peachButton, .melonButton'
+);
+
 const leverButton = document.getElementById('slush-lever');
 const trashButton = document.getElementById('trash-button');
 
