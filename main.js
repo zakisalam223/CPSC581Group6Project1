@@ -1,5 +1,13 @@
 import './mainstyle.css';
 
+const SlushFlavours = Object.freeze({
+    PERFECT: 'Perfect',
+    PEACH: 'Pixel Peach',
+    DRAGONFRUIT: 'Adventurous Dragon Fruit',
+    WATERMELON: 'Watermelon Blast',
+    FIG: 'Funky Fig'
+});
+
 // Array of description objects 
 // TODO: Fill Individual Descriptions here - 2 positive, 2 negative
 const descriptions = {
@@ -101,7 +109,21 @@ const descriptions = {
     ],
 }
 
-// HTML Code for each flavour
+// TODO: Change details to be specific to descriptions, personalities, etc.
+const receiptDetails = {
+    // Perfect Blend (25% for each)
+    [SlushFlavours.PERFECT]: "WOW! This is great!",
+    // Peach
+    [SlushFlavours.PEACH]: "Hmm peachy...",
+    // Dragon Fruit
+    [SlushFlavours.DRAGONFRUIT]: "Dragon (fruit) AHHHHHHH!",
+    // Watermelon
+    [SlushFlavours.WATERMELON]: "WatermelOOOOOOONEEE",
+    // Fig
+    [SlushFlavours.FIG]: "There once was a fig that did a jig"
+}
+
+// HTML Code for each flavour description
 const htmlDescription = (point) => `
     <div class="descriptionBulletPoint">
         <div class="descriptionMain">
@@ -115,12 +137,24 @@ const htmlDescription = (point) => `
     </div>
 `
 
-const juices = {
-    "btn1": "Juice 1",
-    "btn2": "Juice 2",
-    "btn3": "Juice 3",
-    "btn4": "Juice 4"
+// HTML Code for each flavour combination
+const htmlReceiptDetails = (percentageRows, details) => `
+    <div class="receiptRows">
+        ${percentageRows}
+    </div>
+    <div class="receiptDetails">
+        <span class="">${details}</span>
+    </div>
+`
+
+const slushes = {
+    "btn1": SlushFlavours.PEACH,
+    "btn2": SlushFlavours.DRAGONFRUIT,
+    "btn3": SlushFlavours.WATERMELON,
+    "btn4": SlushFlavours.FIG
 }
+
+let slushesContents = new Array(4).fill("");
 
 const allButtons = document.querySelectorAll('.imageButton');
 
@@ -128,22 +162,25 @@ const leverButton = document.getElementById('slush-lever');
 const trashButton = document.getElementById('trash-button');
 
 const POUR_DURATION_MS = 1000; // Duration of pour animation in milliseconds
+const PRINT_DURATION_MS = 500; // Duration of printing of receipt in milliseconds
 
 const desciptionContainer = document.getElementById('description-container');
 const slushesContainer = document.getElementById('slushes-container');
+const receiptContainer = document.getElementById('receipt-container');
 
 let selectedButtonKey = "";
 let slushCount = 0;
+let slushMajority = SlushFlavours.PERFECT;
 let isPouring = false;
 
-// Main buttons - to select juice
+// Main buttons - to select slush
 allButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Change selected button to current
         allButtons.forEach(btn => btn.classList.remove('selected'));
         button.classList.add('selected');
 
-        // Show current juice description
+        // Show current slush description
         selectedButtonKey = button.getAttribute('data-key');
         const currentDescription = descriptions[selectedButtonKey] || "Description not found.";
         // For each description object, create piece of html
@@ -151,11 +188,20 @@ allButtons.forEach(button => {
     });
 });
 
-// Lever - to add juice
+// Lever - to add slush
 leverButton.addEventListener("click", () => {
-    if (slushCount < 4 && !isPouring) {
-        const addedSlush = juices[selectedButtonKey] || "Slush Error";
+    if (selectedButtonKey == "") {
+        alert("OOPS! Select a button first to pour slush.");
+    } else if (slushCount < 4 && !isPouring) {
+        const addedSlush = slushes[selectedButtonKey];
+
+        if (addedSlush == undefined) {
+            alert("Error adding slush! Please try again.");
+        }
+
+        // Add in slush and store contents
         slushesContainer.textContent += addedSlush;
+        slushesContents[slushCount] = addedSlush;
         slushCount++;
 
         // Switch to pour state
@@ -165,15 +211,58 @@ leverButton.addEventListener("click", () => {
         setTimeout(() => {
             leverButton.classList.remove('pouring');
             isPouring = false;
-        }, POUR_DURATION_MS); // Lever waits 3 seconds before returning to normal state
+
+            // Check if cup is full after lever animation
+            if (slushCount == 4) {
+                receiptContainer.textContent = "Printing receipt...";
+
+                setTimeout(() => {
+                    printReceipt();
+                }, PRINT_DURATION_MS); // Wait 1/2 second (500ms) before printing
+            }
+        }, POUR_DURATION_MS); // Lever waits a second before returning to normal state
     }
 });
 
-// trash button to reset the juices (AKA emptying the cup)
+// Trash button - to reset the slush (AKA emptying the cup)
 trashButton.addEventListener("click", trashPressed)
+
+function printReceipt() {
+    const flavourCounts = {};
+    slushesContents.forEach(flavour => {
+        flavourCounts[flavour] = (flavourCounts[flavour] || 0) + 1;
+    });
+
+    const total = slushesContents.length;
+    const percentageResults = {};
+
+    Object.keys(flavourCounts).forEach(key => {
+        const count = flavourCounts[key];
+        const percentage = ((count / total) * 100);
+        const percentageString = `${percentage}%`;
+        percentageResults[key] = percentageString;
+
+        // Check for majority flavour
+        if (percentage >= 50) {
+            slushMajority = key;
+        }
+    });
+
+    // Create html for receipt details
+    const htmlReceiptRows = Object.keys(percentageResults).map(flavour => `
+        <div class="receiptRow">
+            <span class="rowFlavour">${flavour}</span>
+            <span class="rowPercent">${percentageResults[flavour]}</span>
+        </div>
+    `).join('');
+
+    receiptContainer.innerHTML = htmlReceiptDetails(htmlReceiptRows, receiptDetails[slushMajority]);
+}
 
 function trashPressed() {
     slushCount = 0;
     slushesContainer.textContent = "";
+    desciptionContainer.textContent = "Press a button above to see a description.";
+    receiptContainer.textContent = "Once your cup is full your receipt will print.";
 }
 
