@@ -1,3 +1,4 @@
+# How to develop:
 If you don't have Node.js installed on your computer, install the LTS version from here: https://nodejs.org/
 
 You can check if it's installed by running:\
@@ -12,3 +13,12 @@ This installs all of the project's dependencies. You only need to run this once 
 To start the development server, run:\
 `npx vite`\
 You should get a localhost URL in your terminal which you can open to see your changes.
+
+# How to deploy to github pages:
+In the main branch, run:\
+`npm run build`\
+`npx gh-pages -d dist`
+
+You can preview it with: `npm run preview`
+
+Then the github pages website (https://zakisalam223.github.io/CPSC581Group6Project1/) should be updated.
