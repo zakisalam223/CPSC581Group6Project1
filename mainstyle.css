@@ -46,6 +46,22 @@
     }
 }
 
+/* fig button */
+.figButton img {
+    width: 17vw;
+    height: 14vw;
+    animation: figAnimation 0.4s infinite;
+}
+/* animating fig when its not being hovered/clicked */
+@keyframes figAnimation {
+    0%, 49% {
+        content: url("/assets/FunkyFig1.png");
+    }
+    50%, 100% {
+        content: url("/assets/FunkyFig2.png");
+    }
+}
+
 /* Peach Button */
 .peachButton:hover img {
     content: url("/assets/peachbutton2.png");
