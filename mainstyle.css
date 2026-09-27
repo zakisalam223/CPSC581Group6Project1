@@ -57,7 +57,7 @@
 
 /* Dragon Fruit Button */
 .dragonFruitButton:hover img {
-    animation: fruitSwitch 1s steps(1) infinite;
+    content: url("/assets/DragonFruit3.png");
 }
 
 .dragonFruitButton.selected img {
@@ -66,11 +66,11 @@
 
 @keyframes fruitSwitch {
     0% {
-        content: url("/assets/DragonFruit.png");
+        content: url("/assets/DragonFruit2.png");
     }
 
     50% {
-        content: url("/assets/DragonFruit2.png");
+        content: url("/assets/DragonFruit3.png");
     }
 }
 
