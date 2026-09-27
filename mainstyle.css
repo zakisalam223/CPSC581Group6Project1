@@ -51,6 +51,35 @@
     background-color: var(--selected-button-color);
 }
 
+
+.melonButton {
+    padding: 0;
+    margin: 0;
+    border: none;
+
+    width: 25%;
+    height: 100%;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.melonButton img {
+    width: 17vw;
+    height: 14vw;
+}
+
+.melonButton:hover img {
+    content: url("/assets/MelonBlast2.png");
+}
+
+/* Selected Button State */
+.melonButton.selected img {
+    content: url("/assets/MelonBlast2.png");
+}
+
 .bottomBox {
     width: 100%;
     display: flex;
