@@ -88,7 +88,7 @@ const juices = {
 }
 
 const allButtons = document.querySelectorAll(
-    '.imageButton, .peachButton, .melonButton'
+    '.imageButton, .dragonFruitButton, .peachButton, .melonButton'
 );
 
 const leverButton = document.getElementById('slush-lever');
@@ -139,7 +139,7 @@ leverButton.addEventListener("click", () => {
 // trash button to reset the juices (AKA emptying the cup)
 trashButton.addEventListener("click", trashPressed)
 
-function trashPressed(){
+function trashPressed() {
     slushCount = 0;
     slushesContainer.textContent = "";
 }
