@@ -88,7 +88,7 @@ const juices = {
 }
 
 const allButtons = document.querySelectorAll(
-    '.imageButton, .peachButton, .melonButton'
+    '.imageButton, .peachButton, .melonButton, .figButton'
 );
 
 const leverButton = document.getElementById('slush-lever');
