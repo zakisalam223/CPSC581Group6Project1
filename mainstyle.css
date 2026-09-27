@@ -210,10 +210,63 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    position: relative;
 
     img {
         width: 100%;
     }
+}
+
+.cupContainer {
+    position: relative;
+    width: 100%;
+}
+
+.cup {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+
+#slushes-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+
+.slush-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+/* Bottom layer */
+.slush-layer.layer-1 {
+    top: 16%;
+}
+
+/* Second layer */
+.slush-layer.layer-2 {
+    top: -0.5%;
+}
+
+/* Third layer */
+.slush-layer.layer-3 {
+    top: -16%;
+}
+
+/* Top layer */
+.slush-layer.layer-4 {
+    top: -30%;
 }
 
 /* Receipt Elements */
