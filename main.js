@@ -1,4 +1,12 @@
 import './mainstyle.css';
+import peachLayer1 from './assets/peachlayer-1.png';
+import peachLayer2 from './assets/peachlayer-2.png';
+import dragonfruitLayer1 from './assets/dragonfruit-layer1.png';
+import dragonfruitLayer2 from './assets/dragonfruit-layer2.png';
+import watermelonLayer1 from './assets/wm-layer1.png';
+import watermelonLayer2 from './assets/wm-layer2.png';
+import figLayer1 from './assets/figlayer-1.png';
+import figLayer2 from './assets/figlayer-2.png';
 
 // Enum of Slush Flavours
 const SlushFlavours = Object.freeze({
@@ -110,28 +118,28 @@ const descriptions = {
 // Array of slush layers
 const slushLayers = [
     {
-        "btn1": "./assets/peachlayer-1.png",
-        "btn2": "./assets/dragonfruit-layer1.png",
-        "btn3": "./assets/wm-layer1.png",
-        "btn4": "./assets/figlayer-1.png"
+        "btn1": peachLayer1,
+        "btn2": dragonfruitLayer1,
+        "btn3": watermelonLayer1,
+        "btn4": figLayer1
     },
     {
-        "btn1": "./assets/peachlayer-2.png",
-        "btn2": "./assets/dragonfruit-layer2.png",
-        "btn3": "./assets/wm-layer2.png",
-        "btn4": "./assets/figlayer-2.png"
+        "btn1": peachLayer2,
+        "btn2": dragonfruitLayer2,
+        "btn3": watermelonLayer2,
+        "btn4": figLayer2
     },
     {
-        "btn1": "./assets/peachlayer-2.png",
-        "btn2": "./assets/dragonfruit-layer2.png",
-        "btn3": "./assets/wm-layer2.png",
-        "btn4": "./assets/figlayer-2.png"
+        "btn1": peachLayer2,
+        "btn2": dragonfruitLayer2,
+        "btn3": watermelonLayer2,
+        "btn4": figLayer2
     },
     {
-        "btn1": "./assets/peachlayer-2.png",
-        "btn2": "./assets/dragonfruit-layer2.png",
-        "btn3": "./assets/wm-layer2.png",
-        "btn4": "./assets/figlayer-2.png"
+        "btn1": peachLayer2,
+        "btn2": dragonfruitLayer2,
+        "btn3": watermelonLayer2,
+        "btn4": figLayer2
     }
 ];
 
