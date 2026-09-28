@@ -288,6 +288,7 @@ function printReceipt() {
 function trashPressed() {
     slushCount = 0;
     selectedButtonKey = "";
+    allButtons.forEach(btn => btn.classList.remove('selected'));
     Object.keys(slushCounts).forEach(btn => slushCounts[btn] = 0);
     while (slushesContainer.firstChild) {
         slushesContainer.removeChild(slushesContainer.firstChild);
