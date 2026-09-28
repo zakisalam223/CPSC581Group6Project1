@@ -75,7 +75,7 @@ const descriptions = {
         {
             emoji: "(O_O)!",
             fruitAttribute: "no overpowering taste, some non-uniform seeds",
-            personality: "low assertiveness, but suprise you with outbursts (like random seeds)!"
+            personality: "low assertiveness, but suprises you with outbursts (like random seeds)!"
         },
         {
             emoji: "𖦹",
@@ -288,6 +288,7 @@ function printReceipt() {
 function trashPressed() {
     slushCount = 0;
     selectedButtonKey = "";
+    allButtons.forEach(btn => btn.classList.remove('selected'));
     Object.keys(slushCounts).forEach(btn => slushCounts[btn] = 0);
     while (slushesContainer.firstChild) {
         slushesContainer.removeChild(slushesContainer.firstChild);
