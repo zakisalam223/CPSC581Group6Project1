@@ -287,6 +287,7 @@ function printReceipt() {
 // Function to reset slushy
 function trashPressed() {
     slushCount = 0;
+    selectedButtonKey = "";
     Object.keys(slushCounts).forEach(btn => slushCounts[btn] = 0);
     while (slushesContainer.firstChild) {
         slushesContainer.removeChild(slushesContainer.firstChild);
