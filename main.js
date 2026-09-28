@@ -67,7 +67,7 @@ const descriptions = {
         },
         {
             emoji: "(O_O)!",
-            fruitAttribute: "no overpowering taste, lots of seeds",
+            fruitAttribute: "no overpowering taste, some non-uniform seeds",
             personality: "low assertiveness, but suprise you with outbursts (like random seeds)!"
         },
         {
@@ -139,7 +139,7 @@ const slushLayers = [
 const receiptDetails = {
     // Perfect Blend (25% for each)
     [SlushFlavours.PERFECT]:
-        "WOW! This is just right! A great balance of sweet, rich, refreshing, and juicy flavours. Will definitely be coming back here!",
+        "WOW! This is suprisingly works well together! A great balance of sweet, rich, refreshing, and juicy flavours. Will definitely be coming back here!",
     // Peach
     [SlushFlavours.PEACH]:
         "Yum, quite juicy and fun, but too much \"Pixel Peach\": The mellowness is making me a bit tired...",
