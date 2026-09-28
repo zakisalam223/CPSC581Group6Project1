@@ -62,13 +62,13 @@ const descriptions = {
     "btn3": [
         {
             emoji: "˶ᵔ ᵕ ᵔ˶",
-            fruitAttribute: "very refreshing and sweet",
-            personality: "positive and friendly"
+            fruitAttribute: "refreshing and sweet",
+            personality: "optimistic in hard times and thoughtful of others (higher extraversion)"
         },
         {
-            emoji: "„• ֊ •„",
-            fruitAttribute: "not overpowering",
-            personality: "low assertiveness; high cooperativeness"
+            emoji: "(O_O)!",
+            fruitAttribute: "no overpowering taste, lots of seeds",
+            personality: "low assertiveness, but suprise you with outbursts (like random seeds)!"
         },
         {
             emoji: "𖦹",
