@@ -3,10 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Button Family</title>
-    <style>body{background-image:url(https://images.unsplash.com/photo-1773848801744-8479aff48b10?q=80&w=1948&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);background-position:50%;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;margin:0}</style>
-  <script type="module" crossorigin src="/CPSC581Group6Project1/assets/index-JQ2xDTUx.js"></script>
-  <link rel="stylesheet" crossorigin href="/CPSC581Group6Project1/assets/index-D11XvsJ6.css">
+    <title>Family of Slush</title>
+  <script type="module" crossorigin src="/CPSC581Group6Project1/assets/index-Djoh7x0T.js"></script>
+  <link rel="stylesheet" crossorigin href="/CPSC581Group6Project1/assets/index-DuHxgaBm.css">
 </head>
 
 <body>
@@ -27,13 +26,9 @@
         <img src="/CPSC581Group6Project1/assets/MelonBlast-CdOIlr21.png">
     </button>
 
-     <button type="button" class="imageButton figButton" data-key="btn4">
+    <button type="button" class="imageButton figButton" data-key="btn4">
         <img src="/CPSC581Group6Project1/assets/FunkyFig1-c3dqZ-ea.png">
     </button>
-
-    <button type="button" class="imageButton" data-key="btn4">
-        <!-- <img src="/assets/testButton.png"> -->
-         </button>
 </div>
 
 <!-- Trash -->
@@ -59,14 +54,20 @@
 
     <!-- Slush Cup -->
     <div class="cupBox">
-        <div id="slushes-container"></div>
-        <img src="/CPSC581Group6Project1/assets/cup-ByP5pvaz.png" alt="cup">
+        <div class="cupContainer">
+            <div id="slushes-container"></div>
+            <img class="cup" src="/CPSC581Group6Project1/assets/cup-ByP5pvaz.png" alt="cup">
+        </div>
     </div>
 
 
     <!-- Receipt -->
     <div class="receiptBox">
         <img src="/CPSC581Group6Project1/assets/receipt-6dE-IkMz.png" alt="receipt">
+        <div class="receiptInfoBox">
+            <div id="receipt-date"></div>
+            <div id="receipt-container">Once your cup is full your receipt will print.</div>
+        </div>
     </div>
 </div>
 
