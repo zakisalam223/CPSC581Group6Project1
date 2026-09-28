@@ -7,6 +7,12 @@ const SlushFlavours = Object.freeze({
     WATERMELON: 'Watermelon Blast',
     FIG: 'Funky Fig'
 });
+const slushCounts = {
+    btn1: 0,
+    btn2: 0,
+    btn3: 0,
+    btn4: 0
+};
 
 // Array of description objects 
 // TODO: Fill Individual Descriptions here - 2 positive, 2 negative
@@ -82,7 +88,7 @@ const descriptions = {
         }
     ],
 
-    // fig
+    // Fig
     "btn4": [
         {
             emoji: "^_^",
@@ -124,6 +130,71 @@ const receiptDetails = {
 }
 
 // HTML Code for each flavour description
+// Array of slush layers
+const slushLayers = [
+    {
+        "btn1": "./assets/peachlayer-1.png",
+        "btn2": "./assets/dragonfruit-layer1.png",
+        "btn3": "./assets/wm-layer1.png",
+        "btn4": "./assets/figlayer-1.png"
+    },
+    {
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
+    },
+    {
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
+    },
+    {
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
+    }
+];
+
+// Function to add each slush layer
+function addSlushLayer() {
+    const layer = slushLayers[slushCount];
+    const slushImage = layer[selectedButtonKey];
+
+    const img = document.createElement("img");
+    img.src = slushImage;
+    img.classList.add("slush-layer");
+    img.classList.add(`layer-${slushCount + 1}`);
+
+    slushesContainer.appendChild(img);
+}
+
+// Helper function to prevent multiple slush layers and 50-50 edge case
+function canAddSlush() {
+    // Slush already has 2 layers
+    if (slushCounts[selectedButtonKey] >= 2) {
+        window.alert("Can't add more of this slush!");
+        return false;
+    }
+
+    // If this would become the second layer, check whether another slushy already has 2 layers.
+    if (slushCounts[selectedButtonKey] === 1) {
+        const anotherHalfSlush = Object.keys(slushCounts).some(key =>
+            key !== selectedButtonKey && slushCounts[key] === 2
+        );
+
+        if (anotherHalfSlush) {
+            window.alert("You can only have one 50% flavour!");
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// HTML Code for each flavour
 const htmlDescription = (point) => `
     <div class="descriptionBulletPoint">
         <div class="descriptionMain">
@@ -173,7 +244,7 @@ let slushCount = 0;
 let slushMajority = SlushFlavours.PERFECT;
 let isPouring = false;
 
-// Main buttons - to select slush
+// Main buttons - to select slushy
 allButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Change selected button to current
@@ -192,15 +263,17 @@ allButtons.forEach(button => {
 leverButton.addEventListener("click", () => {
     if (selectedButtonKey == "") {
         alert("OOPS! Select a button first to pour slush.");
-    } else if (slushCount < 4 && !isPouring) {
+    } else if (slushCount < 4 && !isPouring && canAddSlush()) {
         const addedSlush = slushes[selectedButtonKey];
 
         if (addedSlush == undefined) {
             alert("Error adding slush! Please try again.");
         }
 
+
         // Add in slush and store contents
-        slushesContainer.textContent += addedSlush;
+        addSlushLayer();
+        slushCounts[selectedButtonKey]++;
         slushesContents[slushCount] = addedSlush;
         slushCount++;
 
@@ -261,7 +334,10 @@ function printReceipt() {
 
 function trashPressed() {
     slushCount = 0;
-    slushesContainer.textContent = "";
+    Object.keys(slushCounts).forEach(btn => slushCounts[btn] = 0);
+    while (slushesContainer.firstChild) {
+        slushesContainer.removeChild(slushesContainer.firstChild);
+    }
     desciptionContainer.textContent = "Press a button above to see a description.";
     receiptContainer.textContent = "Once your cup is full your receipt will print.";
 }

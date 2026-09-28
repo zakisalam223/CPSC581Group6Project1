@@ -44,12 +44,17 @@
     height: 14vw;
     animation: figAnimation 0.4s infinite;
 }
+
 /* animating fig when its not being hovered/clicked */
 @keyframes figAnimation {
-    0%, 49% {
+
+    0%,
+    49% {
         content: url("/assets/FunkyFig1.png");
     }
-    50%, 100% {
+
+    50%,
+    100% {
         content: url("/assets/FunkyFig2.png");
     }
 }
@@ -201,13 +206,65 @@
     display: flex;
     flex-direction: column;
     justify-content: end;
+    position: relative;
 
     img {
         width: 100%;
     }
 }
 
-/* Receipt Box Elements */
+.cupContainer {
+    position: relative;
+    width: 100%;
+}
+
+.cup {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+
+/* Slushy */
+#slushes-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.slush-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Bottom layer of slushy positioning */
+.slush-layer.layer-1 {
+    top: 16%;
+}
+
+/* Second layer */
+.slush-layer.layer-2 {
+    top: -0.5%;
+}
+
+/* Third layer */
+.slush-layer.layer-3 {
+    top: -16%;
+}
+
+/* Top layer */
+.slush-layer.layer-4 {
+    top: -30%;
+}
+
+
+/* Receipt Elements */
 .receiptBox {
     position: relative;
     width: 18vw;
