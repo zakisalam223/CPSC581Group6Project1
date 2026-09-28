@@ -75,7 +75,7 @@ const descriptions = {
         {
             emoji: "(O_O)!",
             fruitAttribute: "no overpowering taste, some non-uniform seeds",
-            personality: "low assertiveness, but suprise you with outbursts (like random seeds)!"
+            personality: "low assertiveness, but suprises you with outbursts (like random seeds)!"
         },
         {
             emoji: "𖦹",
