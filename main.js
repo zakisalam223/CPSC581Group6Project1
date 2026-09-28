@@ -1,5 +1,12 @@
 import './mainstyle.css';
 
+const slushCounts = {
+    btn1: 0,
+    btn2: 0,
+    btn3: 0,
+    btn4: 0
+};
+
 // Array of description objects 
 // TODO: Fill Individual Descriptions here - 2 positive, 2 negative
 const descriptions = {
@@ -74,7 +81,7 @@ const descriptions = {
         }
     ],
 
-    // fig
+    // Fig
     "btn4": [
         {
             emoji: "^_^",
@@ -101,6 +108,70 @@ const descriptions = {
     ],
 }
 
+// Array of slush layers
+const slushLayers = [
+    {
+        "btn1": "./assets/peachlayer-1.png",
+        "btn2": "./assets/dragonfruit-layer1.png",
+        "btn3": "./assets/wm-layer1.png",
+        "btn4": "./assets/figlayer-1.png"
+    },
+    {
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
+    },
+    {
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
+    },
+    {
+        "btn1": "./assets/peachlayer-2.png",
+        "btn2": "./assets/dragonfruit-layer2.png",
+        "btn3": "./assets/wm-layer2.png",
+        "btn4": "./assets/figlayer-2.png"
+    }
+];
+
+// Function to add each slush layer
+function addSlushLayer() {
+    const layer = slushLayers[slushCount];
+    const slushImage = layer[selectedButtonKey];
+
+    const img = document.createElement("img");
+    img.src = slushImage;
+    img.classList.add("slush-layer");
+    img.classList.add(`layer-${slushCount + 1}`);
+
+    slushesContainer.appendChild(img);
+}
+
+// Helper function to prevent multiple slush layers and 50-50 edge case
+function canAddSlush() {
+    // Slush already has 2 layers
+    if (slushCounts[selectedButtonKey] >= 2) {
+        window.alert("Can't add more of this slush!");
+        return false;
+    }
+
+    // If this would become the second layer, check whether another slushy already has 2 layers.
+    if (slushCounts[selectedButtonKey] === 1) {
+        const anotherHalfSlush = Object.keys(slushCounts).some(key =>
+            key !== selectedButtonKey && slushCounts[key] === 2
+        );
+
+        if (anotherHalfSlush) {
+            window.alert("You can only have one 50% flavour!");
+            return false;
+        }
+    }
+
+    return true;
+}
+
 // HTML Code for each flavour
 const htmlDescription = (point) => `
     <div class="descriptionBulletPoint">
@@ -114,13 +185,6 @@ const htmlDescription = (point) => `
         </div>
     </div>
 `
-
-const juices = {
-    "btn1": "Juice 1",
-    "btn2": "Juice 2",
-    "btn3": "Juice 3",
-    "btn4": "Juice 4"
-}
 
 const allButtons = document.querySelectorAll('.imageButton');
 
@@ -136,14 +200,14 @@ let selectedButtonKey = "";
 let slushCount = 0;
 let isPouring = false;
 
-// Main buttons - to select juice
+// Main buttons - to select slushy
 allButtons.forEach(button => {
     button.addEventListener('click', () => {
         // Change selected button to current
         allButtons.forEach(btn => btn.classList.remove('selected'));
         button.classList.add('selected');
 
-        // Show current juice description
+        // Show current slush description
         selectedButtonKey = button.getAttribute('data-key');
         const currentDescription = descriptions[selectedButtonKey] || "Description not found.";
         // For each description object, create piece of html
@@ -151,11 +215,11 @@ allButtons.forEach(button => {
     });
 });
 
-// Lever - to add juice
+// Lever - to add slushy
 leverButton.addEventListener("click", () => {
-    if (slushCount < 4 && !isPouring) {
-        const addedSlush = juices[selectedButtonKey] || "Slush Error";
-        slushesContainer.textContent += addedSlush;
+    if (slushCount < 4 && !isPouring && selectedButtonKey !== "" && canAddSlush()) {
+        addSlushLayer();
+        slushCounts[selectedButtonKey]++;
         slushCount++;
 
         // Switch to pour state
@@ -165,11 +229,11 @@ leverButton.addEventListener("click", () => {
         setTimeout(() => {
             leverButton.classList.remove('pouring');
             isPouring = false;
-        }, POUR_DURATION_MS); // Lever waits 3 seconds before returning to normal state
+        }, POUR_DURATION_MS); // Lever waits 1 seconds before returning to normal state
     }
 });
 
-// trash button to reset the juices (AKA emptying the cup)
+// trash button to reset the slushy (AKA emptying the cup)
 trashButton.addEventListener("click", trashPressed)
 
 function trashPressed() {
