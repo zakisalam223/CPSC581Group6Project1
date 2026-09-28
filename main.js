@@ -136,18 +136,22 @@ const slushLayers = [
     }
 ];
 
-// TODO: Change details to be specific to descriptions, personalities, etc.
 const receiptDetails = {
     // Perfect Blend (25% for each)
-    [SlushFlavours.PERFECT]: "WOW! This is great!",
+    [SlushFlavours.PERFECT]:
+        "WOW! This is just right! A great balance of sweet, rich, refreshing, and juicy flavours. Will definitely be coming back here!",
     // Peach
-    [SlushFlavours.PEACH]: "Hmm peachy...",
+    [SlushFlavours.PEACH]:
+        "Yum, quite juicy and fun, but too much \"Pixel Peach\": The mellowness is making me a bit tired...",
     // Dragon Fruit
-    [SlushFlavours.DRAGONFRUIT]: "Dragon (fruit) AHHHHHHH!",
+    [SlushFlavours.DRAGONFRUIT]:
+        "Pretty good... Not too sweet, but too much \"Adventurous Dragon Fruit\": A few too many seeds also. I will think on this, hmmm.",
     // Watermelon
-    [SlushFlavours.WATERMELON]: "WatermelOOOOOOONEEE",
+    [SlushFlavours.WATERMELON]:
+        "Ah, very refreshing, but too much \"Watermelon Blast\": I like it! But is a bit too watery for my liking!",
     // Fig
-    [SlushFlavours.FIG]: "There once was a fig that did a jig"
+    [SlushFlavours.FIG]:
+        "Ooh, this has a rich flavour, but too much \"Funky Fig\": This slush does not agree with me the best, but I feel quite relaxed."
 }
 
 // HTML CODES //
@@ -269,16 +273,20 @@ function printReceipt() {
         </div>
     `).join('');
 
+    document.getElementById('receipt-date').textContent = new Date(Date.now()).toString().slice(0, 24);
     receiptContainer.innerHTML = htmlReceiptDetails(htmlReceiptRows, receiptDetails[slushMajority]);
 }
 
+// Function to reset slushy
 function trashPressed() {
     slushCount = 0;
     Object.keys(slushCounts).forEach(btn => slushCounts[btn] = 0);
     while (slushesContainer.firstChild) {
         slushesContainer.removeChild(slushesContainer.firstChild);
     }
+    slushMajority = SlushFlavours.PERFECT;
     desciptionContainer.textContent = "Press a button above to see a description.";
+    document.getElementById('receipt-date').textContent = "";
     receiptContainer.textContent = "Once your cup is full your receipt will print.";
 }
 

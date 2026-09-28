@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Patrick+Hand&display=swap');
 
 :root {
     --primary-color: #fff;
@@ -8,6 +8,7 @@
     --font-size-large: 2.5rem;
     --font-size-normal: 1.2rem;
     --border-size: 0.2rem;
+    --border-size-small: 0.1rem;
 }
 
 body {
