@@ -15,7 +15,6 @@ const slushCounts = {
 };
 
 // Array of description objects 
-// TODO: Fill Individual Descriptions here - 2 positive, 2 negative
 const descriptions = {
     // Peach
     "btn1": [
@@ -87,7 +86,6 @@ const descriptions = {
             personality: "go with the flow"
         }
     ],
-
     // Fig
     "btn4": [
         {
