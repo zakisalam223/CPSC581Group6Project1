@@ -95,6 +95,11 @@
     height: 14vw;
     animation: figAnimation 0.4s infinite;
 }
+.figButton.exploding img {
+    width: 17vw;
+    height: 14vw;
+    animation: figExplosion 0.45s;
+}
 
 /* animating fig when its not being hovered/clicked */
 @keyframes figAnimation {
@@ -107,6 +112,30 @@
     50%,
     100% {
         content: url("/assets/FunkyFig2.png");
+    }
+}
+
+/* for when the fig button is clicked */
+@keyframes figExplosion {
+
+    0%,
+    24% {
+        content: url("/assets/FigExplosion1.png");
+    }
+
+    25%,
+    49% {
+        content: url("/assets/FigExplosion2.png");
+    }
+
+    50%,
+    74% {
+        content: url("/assets/FigExplosion3.png");
+    }
+
+    75%,
+    100% {
+        content: url("/assets/FigExplosion4.png");
     }
 }
 

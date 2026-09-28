@@ -208,6 +208,7 @@ const slushes = {
 const allButtons = document.querySelectorAll('.imageButton');
 const leverButton = document.getElementById('slush-lever');
 const trashButton = document.getElementById('trash-button');
+const figButton = document.querySelector('.figButton');
 
 const desciptionContainer = document.getElementById('description-container');
 const slushesContainer = document.getElementById('slushes-container');
@@ -357,4 +358,18 @@ leverButton.addEventListener("click", () => {
 
 // Trash button - to reset the slush (AKA emptying the cup)
 trashButton.addEventListener("click", trashPressed)
+
+figButton.addEventListener("click", figPressed);
+
+function figPressed(){
+    if (figButton.classList.contains('exploding')) {
+        return;
+    }
+
+    figButton.classList.add('exploding');
+
+    setTimeout(() => {
+        figButton.classList.remove('exploding');
+    }, 450);
+}
 
