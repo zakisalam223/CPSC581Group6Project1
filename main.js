@@ -19,6 +19,11 @@ const descriptions = {
             personality: "positive and cheerful"
         },
         {
+            emoji: " 𓆝 𓆟 𓆞 ",
+            fruitAttribute: "eyes closed; slight smile",
+            personality: "high trust but follows through on tasks"
+        },
+        {
             emoji: "ᶻ 𝗓 𐰁 .ᐟ",
             fruitAttribute: "mellow flavour",
             personality: "low activity level; high cooperation"
@@ -26,14 +31,8 @@ const descriptions = {
         {
             emoji: " ˙𐃷˙ ",
             fruitAttribute: "peach is pixelated",
-            personality: "very playful and fun"
+            personality: "low HD quality—can be less open to experiences"
         },
-        {
-            emoji: " 𓆝 𓆟 𓆞 ",
-            fruitAttribute: "eyes closed",
-            personality: "high trust"
-        }
-
     ],
     // Dragon Fruit
     "btn2": [
@@ -67,7 +66,7 @@ const descriptions = {
         },
         {
             emoji: "(O_O)!",
-            fruitAttribute: "no overpowering taste, lots of seeds",
+            fruitAttribute: "no overpowering taste, some non-uniform seeds",
             personality: "low assertiveness, but suprise you with outbursts (like random seeds)!"
         },
         {
@@ -139,7 +138,7 @@ const slushLayers = [
 const receiptDetails = {
     // Perfect Blend (25% for each)
     [SlushFlavours.PERFECT]:
-        "WOW! This is just right! A great balance of sweet, rich, refreshing, and juicy flavours. Will definitely be coming back here!",
+        "WOW! This suprisingly works well together! A great balance of sweet, rich, refreshing, and juicy flavours. Will definitely be coming back here!",
     // Peach
     [SlushFlavours.PEACH]:
         "Yum, quite juicy and fun, but too much \"Pixel Peach\": The mellowness is making me a bit tired...",
