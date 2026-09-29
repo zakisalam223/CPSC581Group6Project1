@@ -22,3 +22,12 @@ In the main branch, run:\
 You can preview it with: `npm run preview`
 
 Then the github pages website (https://zakisalam223.github.io/CPSC581Group6Project1/) should be updated.
+
+# Demo Instructions
+1. Visit the [deployed website](https://zakisalam223.github.io/CPSC581Group6Project1/)
+2. Please set the page size to 1440x1024 for optimal viewing.
+3. Click on a slushy button.
+4. Observe the description.
+5. Click the lever to output slush.
+6. Fill the cup!
+7. Observe the receipt on the left with the final flavour. 
