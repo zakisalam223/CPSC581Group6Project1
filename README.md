@@ -30,4 +30,4 @@ Then the github pages website (https://zakisalam223.github.io/CPSC581Group6Proje
 4. Observe the description.
 5. Click the lever to output slush.
 6. Fill the cup!
-7. Observe the receipt on the left with the final flavour. 
+7. Observe the receipt on the right with the final flavour. 
